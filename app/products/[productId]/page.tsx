@@ -1,14 +1,14 @@
 export default async function ProductDetails({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ productId: string }>;
 }) {
-  const { id } = await params;
+  const { productId } = await params;
 
   return (
     <>
       <h1>Product Details</h1>
-      <p>Product ID: {id}</p>
+      <p>Product ID: {productId}</p>
     </>
   );
 }
