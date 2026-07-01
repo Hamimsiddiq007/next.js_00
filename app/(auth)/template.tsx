@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navLinks = [
   { name: "Login", href: "/login" },
@@ -14,9 +15,13 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [input, setInput] = useState("");
   const pathname = usePathname();
   return (
     <>
+    <div className="">
+      <input type="" value={input} onChange={(e) => setInput(e.target.value)} />
+    </div>
       <h1>Auth Layout</h1>
       <ul>
         {navLinks.map((link) => (
